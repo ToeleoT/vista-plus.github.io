@@ -1,7 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="VISTA+: A Synthetic Data Generation Pipe-line Based On Single Image Novel
+          View Synthesis Method">
+    <meta name="author" content="Kai Gu,
+                                Wenxiu Shi,
+                                Ruibo Wang,
+                                Chen Haoyu,
+                                Yixuan Gao,
+                                Yang Liu,
+                                Song Zhang
+                                ">
+
+    <title>VISTA+: A Synthetic Data Generation Pipe-line Based On Single Image Novel
+        View Synthesis Method</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>VISTA+: A Synthetic Data Generation Pipe-line Based On Single Image Novel
+        View Synthesis Method</h2>
+    <!-- <h3>ICCV 2021 (Oral)</h3> -->
+    <hr>
+    <p class="authors">
+        <a href="gukai02@saicmotor.com" target="_blank"> Kai Gu</a>,
+        <a href="shiwenxiu@saicmotor.com" target="_blank"> Wenxiu Shi</a>,
+        <a href="wangruibo01@saicmotor.com" target="_blank"> Ruibo Wang</a>,
+        <a href="chenhaoyu03@saicmotor.com" target="_blank"> Chen Haoyu</a>,
+        <a href="gaoyixuan@saicmotor.com" target="_blank"> Yixuan Gao</a>,
+        <a href="thu_ets_lab@tsinghua.edu.cn" target="_blank"> Yang Liu</a>,
+        <a href="zhangsong05@saicmotor.com" target="_blank"> Song Zhang</a>
+    </p>
+
+    <p class="authors">
+       <small><a href="https://www.z-one.tech/" target="_blank"> Auto-driving Computing Platform, Z-one Technology Co., LTD. </a> </small>
+    </p>
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <!-- <a class="btn btn-primary" href="https://arxiv.org/abs/2103.15875" target="_blank"> Paper (Arxiv) </a> -->
+        <a class="btn btn-primary" target="_blank"> Paper (Arxiv) </a>
+    </div>
+    <!-- <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" href="https://youtu.be/FpShWO7LVbM" target="_blank"> Video (Youtube) </a> -->
+        <!-- <a class="btn btn-primary" href="https://www.bilibili.com/video/BV1FK4y1M7PC/"> Video (bilibili) </a> -->
+    <!-- </div> -->
+    <!-- <div class="btn-group btn-group-sm" role="group" aria-label="Top menu"> -->
+    <!-- <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" href="https://www.bilibili.com/video/BV1FK4y1M7PC/" target="_blank"> Video (bilibili) </a>
+    </div> -->
+
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" target="_blank"> Code(Coming Soon) </a>
+    </div>
+    <!-- <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary" href="https://www.dropbox.com/sh/9yu1elddll00sdl/AAC-rSJdLX0C6HhKXGKMOIija?dl=0" target="_blank"> Data </a>
+    </div> -->
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="vcontainer">
+            <!-- <video width="100%" playsinline="" controls="" preload="" muted="">
+                <source src="https://www.dropbox.com/s/h12sv0zlt5beqm8/Semantic_NeRF_Final_public.mp4?dl=1" type="video/mp4">
+            </video> -->
+            <!-- <iframe class='video' src="https://www.youtube.com/embed/FpShWO7LVbM" frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe> -->
+            <!-- <source src="Semantic_NeRF_Final_public.mp4" type="video/mp4"> -->
+        </div>
+        <hr>
+        <p>
+            We propose VISTA+, a synthetic data generation pipeline based on single-image novel view synthesis (NVS). 
+            The method separates the 3D scene into foreground and background, representing the background as a 3D texture mesh reconstructed after foreground inpainting. 
+            CAD assets rendered in Blender generate foreground images, which are then combined with the background to create new images. 
+            Inpainting artifacts on non-smooth foreground objects are addressed to enhance the quality of novel view images, particularly for roads. 
+            Novel view images are rendered by selecting spatially closest images to the required poses, making the method ideal for scenarios where vehicles repeatedly pass through the same road sections, such as buses and Robotaxis. 
+            We validate the quality of the synthesized images and demonstrate the effectiveness of the synthetic data in improving downstream detection tasks on a public dataset. 
+        </p>
+    </div>
+
+    <!-- <div class="section">
+        <h2>Applications</h2>
+        <hr>
+        <p>
+            Scene-specific implicit 3D semantic representation is obtained by training on colour images and semantic labels with associated poses. 
+            Motivated by the enforcement of multi-view consistency and internal coherence within representation,
+            <b>we find that the training process of Semantic-NeRF itself is a multi-view label fusion and propagation process, i.e., fusion via learning</b>.
+            So that it is possible to train Semantic-NeRF efficiently to accurately render the full scene with various types of sparse or imperfect labels.
+            </br>
+            </br>
+            We aim to demonstrate the benefits and promising applications of efficiently learning such a joint 3D representation for semantic labelling and understanding. 
+    </div> -->
+
+
+    <div class="section">
+        <h2>Panoptic Scene Synthesis</h2>
+        <hr>
+        <p>
+            write content
+        </p>
+        <!-- <div class="row align-items-center"> -->
+        <div class="row justify-content-left">
+            <div class="col-sm-12">
+                <h5>nuScense dataset</h5>
+                <div class="col justify-content-center text-center">
+                    <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                        <!-- <source src="https://www.dropbox.com/s/78h8sunsq6zrvg0/VS_room2.mp4?dl=1" type="video/mp4"> -->
+                        <!-- <source src="https://www.dropbox.com/s/78h8sunsq6zrvg0/VS_room2.mp4?raw=1" type="video/mp4"> -->
+                        <source src="video/temp_fast1.mp4" type="video/mp4">
+                    </video>
+                    <!-- <source src="https://www.dropbox.com/s/78h8sunsq6zrvg0/VS_room2.mp4?raw=1" type="video/mp4"> -->
+                    <!-- <source src="img/VS_room2.mp4" type="video/mp4"> -->
+                </div>
+            </div>
+        </br>
+    </div>
+
+
+    <div class="section">
+        <h2>Reconstructed scene with different Cameras</h2>
+        <hr>
+        <p>
+            write content
+        </p>
+        <!-- <div class="row align-items-center"> -->
+        <div class="row justify-content-left">
+            <div class="col-sm-6">
+                <h5>Left camera 1</h5>
+                <div class="col justify-content-center text-center">
+                    <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                        <source src="video/temp_left1.mp4" type="video/mp4">
+                        <!-- <source src="https://www.dropbox.com/s/vupdpk7i7e67iol/denoise_office_0.mp4?dl=1" type="video/mp4"> -->
+                    </video>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h5>Right camera 1</h5>
+                <div class="col justify-content-center text-center">
+                    <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                        <source src="video/temp_right1.mp4" type="video/mp4">
+                        <!-- <source src="https://www.dropbox.com/s/efenn6vffvf5sls/denoise_room_1.mp4?dl=1" type="video/mp4"> -->
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        </br>
+        
+        <div class="row justify-content-left">
+        <!-- <div class="row align-items-center"> -->
+            <div class="col-sm-6">
+                <h5>Left camera 2</h5>
+                <div class="col justify-content-center text-center">
+                    <!-- <video width="100%" playsinline="" autoplay="" loop="" preload="" muted=""> -->
+                    <video width="100%" playsinline="" controls="" loop="" preload="" muted="">
+                        <source src="video/temp_left2.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h5>Right camera 2</h5>
+                <div class="col justify-content-center text-center">
+                    <!-- <video width="100%" playsinline="" autoplay="" loop="" preload="" muted=""> -->
+                    <video width="100%" playsinline="" controls="" loop="" preload="" muted="">
+                        <source src="video/temp_right2.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Conclusion</h2>
+        <hr>
+        <p>
+            We propose VISTA+, a synthetic data pipeline based on single image novel view reconstruction, to realize real-time image generation. 
+            We evaluate the NVS method on KITTI and nuScense datasets, and for downstream tasks, we evaluate its effect on nuSense. 
+            The results show that the NVS performance is very good, and it also has a promoting effect on downstream detection tasks. 
+            In our validation, we also found that despite the imperfections of this solution, such as not focusing on reconstructing the whole world and avoiding the missing margin in the invisible areas at the margins of the novel view images. 
+            However, it is surprisingly easy and simple to use for downstream inspection tasks, which makes it a bit of an AK47 rifle feeling: simple, robust, and powerful. 
+            We hope this scheme can inspire the community.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+        <h2>Paper</h2>
+        <hr>
+        <div>
+            <div class="list-group">
+                <a href="https://arxiv.org/abs/2103.15875"
+                   class="list-group-item">
+                    <img src="video/fig2.png" style="width:100%; margin-right:-20px; margin-top:-10px;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Bibtex</h2>
+        <hr>
+        <div class="bibtexsection">
+            wait upload
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>Feel free to send any feedback and questions to <a href="zhangsong05@saicmotor.com">Song Zhang</a></p>
+    </footer>
+    <footer>
+        <!-- <h6>Acknowledgement</h6> -->
+        <p><small>The website template was borrowed from <a href="https://vsitzmann.github.io/siren/">SIREN</a></small></p>
+    </footer>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>
